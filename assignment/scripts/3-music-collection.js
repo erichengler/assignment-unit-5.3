@@ -44,3 +44,18 @@ function findByArtist ( artist ) {
 console.log( findByArtist( 'Yabba Dabba' ) );
 console.log( findByArtist( 'King Gizzard and the Lizard Wizard' ) );
 console.log( findByArtist( 'Shpongle' ) );
+
+// * STRETCH GOALS *
+
+function search ( input, array ) {
+    let results = [];
+    for ( let i=0; i<array.length; i++ ) {
+        for ( let key in array[i] ) {
+            if ( array[i][key].indexOf( input ) != -1 ) {
+                results.push( array[i] );
+            } key += 1;
+        }
+    } return results;
+}
+
+console.log( search( 'King', collection ) );
