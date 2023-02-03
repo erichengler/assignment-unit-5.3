@@ -2,12 +2,13 @@ console.log('***** Music Collection *****')
 
 let collection = [];
 
-function addToCollection ( title, artist, yearPublished ) {
+function addToCollection ( title, artist, yearPublished, tracks ) {
     let newAlbum = 
     {
         title: title,
         artist: artist,
-        yearPublished: yearPublished
+        yearPublished: yearPublished,
+        tracks: tracks
     }
     collection.push( newAlbum );
     return `Added ${ newAlbum.title } by ${ newAlbum.artist } to the collection.`
@@ -66,3 +67,10 @@ console.log( search( 'Leather Teeth' ) );
 console.log( search( 2016 ) );
 console.log( search( 2021 ) );
 console.log( search( '' ) );
+
+for ( let object of collection ) {
+    object.tracks = [{
+        name: '',
+        duration: 0
+    }];
+}
