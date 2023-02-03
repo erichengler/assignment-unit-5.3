@@ -46,16 +46,23 @@ console.log( findByArtist( 'King Gizzard and the Lizard Wizard' ) );
 console.log( findByArtist( 'Shpongle' ) );
 
 // * STRETCH GOALS *
-
-function search ( input, array ) {
+console.log( 'STRETCHIN' );
+function search ( input ) {
     let results = [];
-    for ( let i=0; i<array.length; i++ ) {
-        for ( let key in array[i] ) {
-            if ( array[i][key].indexOf( input ) != -1 ) {
-                results.push( array[i] );
-            } key += 1;
+    for ( let object of collection ) {
+        for ( let key in object ) {
+            if ( input === object[key] ) {
+                results.push( object );
+            }
         }
+        if ( input === '' ) {
+            results = collection
+        } 
     } return results;
 }
 
-console.log( search( 'King', collection ) );
+console.log( search( 'King Gizzard and the Lizard Wizard' ) );
+console.log( search( 'Leather Teeth' ) );
+console.log( search( 2016 ) );
+console.log( search( 2021 ) );
+console.log( search( '' ) );
